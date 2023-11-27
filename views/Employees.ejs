@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+<title>Employees</title>
+</head>
+<body>
+  <div class="container" style="background-color: rgb(0, 0, 0);">
+    <div class="container-table " style="background-color: black;">
+        <h2 class="table text-center text-primary"> Employees </h2>
+  </div>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <% for (let i of columns) { %>
+           <% if (i.name != "Photo") { %>
+             <th class="center text-center"><%= i.name %></th>
+           <% } %>
+        <% } %>
+        </tr>
+    </thead>
+    <tbody>
+      <% for (let employee of rows) { %>  
+            <tr class ="center">
+                <td class="center aling-middle text-center"> <%= employee.EmployeeID %> </td>
+                <td class="center aling-middle text-center"> <%= employee.LastName %> </td>
+                <td class="center aling-middle text-center"> <%= employee.FirstName %> </td>
+                <td class="center aling-middle text-center"> <%= employee.BirthDate %> </td>
+                <td class="center aling-middle text-center"> <%= employee.Notes %> </td>
+            </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<link rel="stylesheet" href="/style.css">
+</body>
+</html>
